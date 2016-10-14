@@ -1,0 +1,1 @@
+4	a_starwith a out of place heurisitic:	1800.027394	140131	['down', 'right', 'up', 'left', 'left', 'down', 'right', 'up', 'up', 'right', 'down', 'down', 'left', 'left', 'up', 'up', 'right']	Time till Optimal Solution

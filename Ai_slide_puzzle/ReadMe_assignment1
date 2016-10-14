@@ -1,0 +1,9 @@
+ReadMe
+
+Built in python 2.7. 
+
+To modify the Network go down to the bottom of the file where the multiem function is and change the network as you with within that. 
+
+To change the datasetFiles go to the files list all the way under that and place the proper file names. You can also comment out one of the multi em lines if you want to run just random starting point or just a set starting point. To set the starting point you need to go into the multiem function. 
+
+

@@ -1,0 +1,149 @@
+OUTPUTFILE_statingValues_hw2dataset_30.txt
+ASSUMING PROBABILITIES HAVE BEEN GIVEN TO NETWORK
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.300000
+P(Gender=M )=0.700000
+
+TableView:
+Gender	
+0:	0.700000	
+1:	0.300000	
+
+
+P(Weight=less_than_130 | Gender=M )=0.200000
+P(Weight=less_than_130 | Gender=F )=0.600000
+P(Weight=greater_than_130 | Gender=F )=0.400000
+P(Weight=greater_than_130 | Gender=M )=0.800000
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.800000	0.400000	
+1:	0.200000	0.600000	
+
+
+P(Height=less_than_55 | Gender=M )=0.300000
+P(Height=less_than_55 | Gender=F )=0.700000
+P(Height=greater_than_55 | Gender=F )=0.300000
+P(Height=greater_than_55 | Gender=M )=0.700000
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.700000	0.300000	
+1:	0.300000	0.700000	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.1174513183528347)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04972026655036643)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00518972276228169)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000666
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-337.807026
+2	-336.689575
+3	-336.639855
+4	-336.634665
+
+
+ 	  0 = nth time RUNNING EM ALGORITHM 
+
+ASSUMING PROBABILITIES HAVE BEEN GIVEN TO NETWORK
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.300000
+P(Gender=M )=0.700000
+
+TableView:
+Gender	
+0:	0.700000	
+1:	0.300000	
+
+
+P(Weight=less_than_130 | Gender=M )=0.200000
+P(Weight=less_than_130 | Gender=F )=0.600000
+P(Weight=greater_than_130 | Gender=F )=0.400000
+P(Weight=greater_than_130 | Gender=M )=0.800000
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.800000	0.400000	
+1:	0.200000	0.600000	
+
+
+P(Height=less_than_55 | Gender=M )=0.300000
+P(Height=less_than_55 | Gender=F )=0.700000
+P(Height=greater_than_55 | Gender=F )=0.300000
+P(Height=greater_than_55 | Gender=M )=0.700000
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.700000	0.300000	
+1:	0.300000	0.700000	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.1174513183528347)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04972026655036643)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00518972276228169)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000666
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-337.807026
+2	-336.689575
+3	-336.639855
+4	-336.634665
+
+Not a better answer
+Best Answer has a likelyhood of
+-336.63466517
+
+
+ Printing conditionalProbability for best iteration of EM:
+
+P(Gender=F )=0.317686
+P(Gender=M )=0.682314
+
+TableView:
+Gender	
+0:	0.682314	
+1:	0.317686	
+
+
+P(Weight=less_than_130 | Gender=M )=0.214904
+P(Weight=less_than_130 | Gender=F )=0.624415
+P(Weight=greater_than_130 | Gender=F )=0.375585
+P(Weight=greater_than_130 | Gender=M )=0.785096
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.785096	0.375585	
+1:	0.214904	0.624415	
+
+
+P(Height=less_than_55 | Gender=M )=0.348511
+P(Height=less_than_55 | Gender=F )=0.652235
+P(Height=greater_than_55 | Gender=F )=0.347765
+P(Height=greater_than_55 | Gender=M )=0.651489
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.651489	0.347765	
+1:	0.348511	0.652235	
+
+	 ITERATION LIKELYHOOD TABLE:
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-337.807026
+2	-336.689575
+3	-336.639855
+4	-336.634665
+
+-336.63466517

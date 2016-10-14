@@ -1,0 +1,406 @@
+
+First Start board: 
+STARTBOARD:: 
+ 1 3 4
+ 8 6 2
+ 7 _ 5
+
+First Ai using a_star search with a out of place heurisitic : 
+starting board is: 
+ 1 3 4
+ 8 6 2
+ 7 _ 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'up', 'left', 'down']
+Time took: 0.002883 seconds
+Total number of expanded nodes is 22 
+
+
+Total number of moves is 5 
+
+
+Second Ai using a_star search with a Manhattan distance heuristic: 
+starting board is: 
+ 1 3 4
+ 8 6 2
+ 7 _ 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'up', 'left', 'down']
+Time took: 0.002024 seconds
+Total number of expanded nodes is 15 
+
+
+Total number of moves is 5 
+
+
+Third Ai using Depth-first branch and bound search with a Manhattan distance heuristic: 
+starting board is: 
+ 1 3 4
+ 8 6 2
+ 7 _ 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'up', 'left', 'down']
+Time took: 0.008081 seconds
+Total number of expanded nodes is 29 
+
+
+Total number of moves is 5 
+
+
+Fourth Ai using Iterative deepening a* search with a Manhattan distance heuristic: 
+starting board is: 
+ 1 3 4
+ 8 6 2
+ 7 _ 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'up', 'left', 'down']
+Time took: 0.002948 seconds
+Total number of expanded nodes is 25 
+
+
+Total number of moves is 5 
+
+
+STARTBOARD:: 
+ 2 8 1
+ _ 4 3
+ 7 6 5
+
+First Ai using a_star search with a out of place heurisitic : 
+starting board is: 
+ 2 8 1
+ _ 4 3
+ 7 6 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.025962 seconds
+Total number of expanded nodes is 140 
+
+
+Total number of moves is 9 
+
+
+Second Ai using a_star search with a Manhattan distance heuristic: 
+starting board is: 
+ 2 8 1
+ _ 4 3
+ 7 6 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.010597 seconds
+Total number of expanded nodes is 66 
+
+
+Total number of moves is 9 
+
+
+Third Ai using Depth-first branch and bound search with a Manhattan distance heuristic: 
+starting board is: 
+ 2 8 1
+ _ 4 3
+ 7 6 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.082332 seconds
+Total number of expanded nodes is 333 
+
+
+Total number of moves is 9 
+
+
+Fourth Ai using Iterative deepening a* search with a Manhattan distance heuristic: 
+starting board is: 
+ 2 8 1
+ _ 4 3
+ 7 6 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.010143 seconds
+Total number of expanded nodes is 59 
+
+
+Total number of moves is 9 
+
+
+STARTBOARD:: 
+ 2 8 1
+ 4 6 3
+ _ 7 5
+
+First Ai using a_star search with a out of place heurisitic : 
+starting board is: 
+ 2 8 1
+ 4 6 3
+ _ 7 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.121015 seconds
+Total number of expanded nodes is 507 
+
+
+Total number of moves is 12 
+
+
+Second Ai using a_star search with a Manhattan distance heuristic: 
+starting board is: 
+ 2 8 1
+ 4 6 3
+ _ 7 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.043760 seconds
+Total number of expanded nodes is 179 
+
+
+Total number of moves is 12 
+
+
+Third Ai using Depth-first branch and bound search with a Manhattan distance heuristic: 
+starting board is: 
+ 2 8 1
+ 4 6 3
+ _ 7 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.057387 seconds
+Total number of expanded nodes is 247 
+
+
+Total number of moves is 12 
+
+
+Fourth Ai using Iterative deepening a* search with a Manhattan distance heuristic: 
+starting board is: 
+ 2 8 1
+ 4 6 3
+ _ 7 5
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']
+Time took: 0.061153 seconds
+Total number of expanded nodes is 366 
+
+
+Total number of moves is 12 
+
+
+STARTBOARD:: 
+ 5 6 7
+ 4 _ 8
+ 3 2 1
+
+First Ai using a_star search with a out of place heurisitic : 
+error no solution
+Second Ai using a_star search with a Manhattan distance heuristic: 
+starting board is: 
+ 5 6 7
+ 4 _ 8
+ 3 2 1
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'up']
+Time took: 3.247276 seconds
+Total number of expanded nodes is 5440 
+
+
+Total number of moves is 30 
+
+
+Third Ai using Depth-first branch and bound search with a Manhattan distance heuristic: 
+starting board is: 
+ 5 6 7
+ 4 _ 8
+ 3 2 1
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'up']
+Time took: 3.528737 seconds
+Total number of expanded nodes is 15371 
+
+
+Total number of moves is 30 
+
+
+Fourth Ai using Iterative deepening a* search with a Manhattan distance heuristic: 
+starting board is: 
+ 5 6 7
+ 4 _ 8
+ 3 2 1
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Steps to get there are : ['up', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'up']
+Time took: 3.440571 seconds
+Total number of expanded nodes is 26024 
+
+
+Total number of moves is 30 
+
+/n/n/n/n Errors: /n 
+starting board is: 
+ 5 6 7
+ 4 _ 8
+ 3 2 1
+ 
+goal is: 
+ 1 2 3
+ 8 _ 4
+ 7 6 5
+
+Assumed solved state is: 
+ 7 _ 2
+ 5 6 8
+ 3 1 4
+
+Steps to get there are : ['down', 'right', 'up', 'left', 'left', 'down', 'right', 'up', 'up', 'right', 'down', 'down', 'left', 'left', 'up', 'up', 'right']
+Time took: 1800.027394 seconds
+Total number of expanded nodes is 140131 
+
+
+Total number of moves is 17 
+

@@ -1,0 +1,159 @@
+OUTPUTFILE_statingValues_hw2dataset_100.txt
+ASSUMING PROBABILITIES HAVE BEEN GIVEN TO NETWORK
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.300000
+P(Gender=M )=0.700000
+
+TableView:
+Gender	
+0:	0.700000	
+1:	0.300000	
+
+
+P(Weight=less_than_130 | Gender=M )=0.200000
+P(Weight=less_than_130 | Gender=F )=0.600000
+P(Weight=greater_than_130 | Gender=F )=0.400000
+P(Weight=greater_than_130 | Gender=M )=0.800000
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.800000	0.400000	
+1:	0.200000	0.600000	
+
+
+P(Height=less_than_55 | Gender=M )=0.300000
+P(Height=less_than_55 | Gender=F )=0.700000
+P(Height=greater_than_55 | Gender=F )=0.300000
+P(Height=greater_than_55 | Gender=M )=0.700000
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.700000	0.300000	
+1:	0.300000	0.700000	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2528804037218606)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01301418586052705)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0067719150375182835)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003436660721206408)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0017126652351180383)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000842
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-259.950684
+2	-259.697803
+3	-259.684789
+4	-259.678017
+5	-259.674581
+6	-259.672868
+
+
+ 	  0 = nth time RUNNING EM ALGORITHM 
+
+ASSUMING PROBABILITIES HAVE BEEN GIVEN TO NETWORK
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.300000
+P(Gender=M )=0.700000
+
+TableView:
+Gender	
+0:	0.700000	
+1:	0.300000	
+
+
+P(Weight=less_than_130 | Gender=M )=0.200000
+P(Weight=less_than_130 | Gender=F )=0.600000
+P(Weight=greater_than_130 | Gender=F )=0.400000
+P(Weight=greater_than_130 | Gender=M )=0.800000
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.800000	0.400000	
+1:	0.200000	0.600000	
+
+
+P(Height=less_than_55 | Gender=M )=0.300000
+P(Height=less_than_55 | Gender=F )=0.700000
+P(Height=greater_than_55 | Gender=F )=0.300000
+P(Height=greater_than_55 | Gender=M )=0.700000
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.700000	0.300000	
+1:	0.300000	0.700000	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2528804037218606)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01301418586052705)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0067719150375182835)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003436660721206408)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0017126652351180383)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000842
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-259.950684
+2	-259.697803
+3	-259.684789
+4	-259.678017
+5	-259.674581
+6	-259.672868
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672867979
+
+
+ Printing conditionalProbability for best iteration of EM:
+
+P(Gender=F )=0.302822
+P(Gender=M )=0.697178
+
+TableView:
+Gender	
+0:	0.697178	
+1:	0.302822	
+
+
+P(Weight=less_than_130 | Gender=M )=0.205038
+P(Weight=less_than_130 | Gender=F )=0.634207
+P(Weight=greater_than_130 | Gender=F )=0.365793
+P(Weight=greater_than_130 | Gender=M )=0.794962
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.794962	0.365793	
+1:	0.205038	0.634207	
+
+
+P(Height=less_than_55 | Gender=M )=0.276704
+P(Height=less_than_55 | Gender=F )=0.700372
+P(Height=greater_than_55 | Gender=F )=0.299628
+P(Height=greater_than_55 | Gender=M )=0.723296
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.723296	0.299628	
+1:	0.276704	0.700372	
+
+	 ITERATION LIKELYHOOD TABLE:
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-259.950684
+2	-259.697803
+3	-259.684789
+4	-259.678017
+5	-259.674581
+6	-259.672868
+
+-259.672867979

@@ -1,0 +1,16 @@
+Board_Number	Algorithm	Time of Algorithm	Expanded Nodes	Steps to get there	Time till Optimal Solution
+1	a_starwith a out of place heurisitic:	0.002883	22	['up', 'right', 'up', 'left', 'down']	Time till Optimal Solution
+1	a_starwith a Manhattan distance heurisitic:	0.002024	15	['up', 'right', 'up', 'left', 'down']	Time till Optimal Solution
+1	Depth-first branch and boundwith a Manhattan distance heurisitic:	0.008081	29	['up', 'right', 'up', 'left', 'down']	0.002188
+1	Iterative deepening a*with a Manhattan distance heurisitic:	0.002948	25	['up', 'right', 'up', 'left', 'down']	Time till Optimal Solution
+2	a_starwith a out of place heurisitic:	0.025962	140	['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	Time till Optimal Solution
+2	a_starwith a Manhattan distance heurisitic:	0.010597	66	['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	Time till Optimal Solution
+2	Depth-first branch and boundwith a Manhattan distance heurisitic:	0.082332	333	['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	0.078175
+2	Iterative deepening a*with a Manhattan distance heurisitic:	0.010143	59	['up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	Time till Optimal Solution
+3	a_starwith a out of place heurisitic:	0.121015	507	['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	Time till Optimal Solution
+3	a_starwith a Manhattan distance heurisitic:	0.043760	179	['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	Time till Optimal Solution
+3	Depth-first branch and boundwith a Manhattan distance heurisitic:	0.057387	247	['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	0.050745
+3	Iterative deepening a*with a Manhattan distance heurisitic:	0.061153	366	['right', 'up', 'left', 'up', 'right', 'right', 'down', 'left', 'left', 'up', 'right', 'down']	Time till Optimal Solution
+4	a_starwith a Manhattan distance heurisitic:	3.247276	5440	['up', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'up']	Time till Optimal Solution
+4	Depth-first branch and boundwith a Manhattan distance heurisitic:	3.528737	15371	['up', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'up']	3.341622
+4	Iterative deepening a*with a Manhattan distance heurisitic:	3.440571	26024	['up', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'right', 'up', 'up', 'left', 'left', 'down', 'down', 'right', 'up']	Time till Optimal Solution

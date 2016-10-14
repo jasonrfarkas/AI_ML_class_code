@@ -1,0 +1,850 @@
+# Reasorce :  http://www.cs.ubc.ca/~mack/CS322/lectures/2-Search6.pdf
+
+""" 
+	This project was created as part of a an AI class at Queens College. 
+	It is the first project and the goal is the implement 4 Algorithms 
+	to solve a tile sliding problem for a 3*3 board. 
+
+	I created a solution that should work for any n*n board. 
+	There are 3 classes being: Boardb, BoardNode, and AI
+
+	A Boardb is a simple representation of an n*n board. 
+	BoardNode extends Boardb to give it additional functionality that
+	enables it to act as a node within a tree and track other
+	information such as the moves required to arrive at that board state, 
+	the time the node was created, the parent node, and the estimated 
+	distance to the target board state. 
+
+	The AI class which takes in a starting and ending BoardNode
+	and can implement 4 various Algorithms with arguments for desired 
+	heurisitics. The 4 Algorithms are: a_star, a_star_branch_and_bound. 
+	df_branch_and_bound, and iterative_deepening_search (which is not 
+	part of the projet). 
+	The only programed heurisitics are Manhattan distance and out_of_place
+	distance. Some functions naturally use a f(n) = g(n) + h(n) function
+	that combines two heurisitic but automatically set g(n) and only 
+	permit arguments for h(n)
+	Each of these functions returns a BoardNode solution state and/or 
+	a list containing a success value and a solution state. 
+	The functions are timed such that they will terminate when they 
+	have exceeded the specified time limit and return an appropriate 
+	success value that indicates time limit exceeded
+
+	The main part of this program instantiates 4 start states, one goals
+	state, and 4 AI's. For each start state each AI implements a different
+	algorithm to solve the puzzle. Results are then printed via the 
+	normal console and additional two files are created. One file 
+	saves all required project data to file that can easily be imported 
+	into excel for analysis and another file that keeps track of all the 
+	errors when an Algorithm did not produce intended results. 
+
+	Author- Jason Farkas
+"""
+
+
+# Import statements
+from heapq import heappush, heappop, heapify
+import math
+import copy
+import time
+# End Imports
+
+# Start Classes
+class Boardb(object):
+	"""
+		Class to represent an n*n board. 
+		Propreties:
+			Squares - a list of board positions
+				Assumed to be integers
+			Size - n*n
+				Assumed to be a positive perfect square int >= 9
+			Blank_index - position where board lacks a number
+				Assumed to be an index representing a position in squares
+		Methods:
+			__init__ - constructor
+			set_blank_point - setter for blank_index
+			__str__ - returns a string representation of the board
+			get_board - returns squares
+			distance - returns the Manhattan distance between two index positions
+				assumed to be nonnegative ints less than Size 
+			switch_indexes - switch the values in two indexs given the two indexs
+	"""
+	def __init__(self,squares = [0]*9): 
+		self.squares = squares
+		self.size = int(len(squares))
+		self.blank_index= self.set_blank_point()
+
+	def set_blank_point(self, index = -1):
+		"""
+			If given a valid index it will set blank_index to that and assume it is correct
+			otherwise if it is not given an index it will loop through squares to find a blank index
+			and return the first one found
+		"""
+		if index > 0 and index < self.size: # If passed an acceptable index
+			self.blank_index  = index
+			return self.blank_index
+		else: # If passed an unacceptable index or no index(defauts to -1 which is unacceptable)
+			for i in range(int(self.size)):# loop through board positions
+				if (self.squares[i] == "blank" or self.squares[i] == " " or
+					self.squares[i] == "_"): 
+					# If there is a position with some representation of a blank square
+					index = i 
+					self.blank_index = index
+					break
+			if index == -1: # If there is no index found
+				print ("Error no blank index found")
+			return index # Return where index was found
+
+	def __str__(self):
+		"""
+			Loops through the positions.
+			Assumes row size = col size = n
+			Prints the values row by row
+		"""
+		row_size = int(math.sqrt(len(self.get_board())))
+		total_s = ""
+		counter=0
+		for i in range(row_size): # loop through rows
+			s = ""
+			for j in range(row_size): # loop through columns
+				item =self.squares[counter]
+				# Check the type of the list position and add to string appropriately
+				if isinstance( item, str):
+					s += " " +item
+				elif isinstance( item, int):
+					s += " %d" %item
+				counter+=1
+			total_s+= s + "\n"
+		return total_s
+	
+	def get_board(self):
+		return self.squares
+
+	def distance(self, from_v, to_v):
+		"""
+			Determines Manhattan distance from from_v to to_v
+			The row is the index flat divided by n 
+			The col is the remainder of that division
+		"""
+		row_size= int(math.sqrt(self.size))
+		from_row, from_column = from_v//row_size, from_v % self.size # Get row and col numbers of from_v
+		to_row, to_column = to_v//row_size, to_v % self.size # Get row and col numbers of to_v
+		y_differance = abs(to_row-from_row) # Find the vertical distance
+		x_differance = abs(to_column-from_column) # find the horizontal distance
+		return x_differance+y_differance # Return the sum of distances
+
+	def switch_indexes(self,a,b):
+		# Check that each index is a valid index in our board then swap
+		if(a >= 0 and a < self.size and b >= 0 and b < self.size and a !=b):
+			temp = self.squares[a]
+			self.squares[a] = self.squares[b]
+			self.squares[b] = temp
+
+
+class BoardNode(Boardb):
+	""" 
+		The class extends the Boardb class to add node functionality. 
+		Propreties:
+			Those of Boardb- described above. 
+			parent - a pointer to a BoardNode that generated this BoardNode isinstance
+			move_list - a list containing instructions such as right,left,up, or down
+				that describe the movement of the blank index (switched with the index it 
+				moves into) to arrive at this BoardNode state from an original state
+				through a list of other states. 
+			ticks - a timestamp used to hold the creation time of this BoardNode
+			distance - a value to hold the distance between this state and a goal state
+				this value is only modified by an outside class ( In this case the AI class
+				and I only used it in the a_star algorithm)
+
+		Methods:
+			__init__ - constructor Method
+			setDistance - setter for distanceFromTarget that checks that the distance is position
+			get_number_of_moves - returns the number of elements in move_list
+			clone - produces a replica of the current BoardNode state excluding ticks, parent, and
+					distanceFromTarget
+			can_expand_* - Checks if the blank index can be moved in a particular direction without 
+							moving off the BoardNode
+			expand_* - If possible it generates a clone and modifies the clone by moving the blank index
+			expand_all - Returns a list of BoardNodes that represent all possible expansions 
+			__lt__, __eq__, __ne__  - Overloaded constructors that can compare BoardNode to each other 
+				using distance as the determining factor. Eq and Ne also provide equallity to booleans 
+				such that essentially tests if a BoardNode is indeed a type(BoardNode)
+	"""
+
+	def __init__(self, squares, parent = False, move_list=[]):
+		super(BoardNode,self).__init__(squares)
+		self.parent = parent
+		self.move_list = move_list
+		self.ticks = time.time()
+		self.distanceFromTarget= -1
+
+	def setDistance(self,value):
+		if(value >= 0):
+			self.distanceFromTarget = value; 
+		elif(value < 0):
+			print("Distance must be nonnegative")
+
+	def get_number_of_moves(self):
+		return len(self.move_list)
+
+	def __clone__(self):
+		clone = BoardNode(copy.deepcopy(self.squares), self, copy.deepcopy(self.move_list))
+		return clone
+
+	def can_expand_right(self):
+		return  self.blank_index%int(math.sqrt(self.size)) != int(math.sqrt(self.size)) - 1
+
+	def can_expand_left(self):
+		return  self.blank_index%int(math.sqrt(self.size)) != 0
+
+	def can_expand_up(self):
+		return  self.blank_index//int(math.sqrt(self.size)) != 0
+
+	def can_expand_down(self):
+		return  self.blank_index//int(math.sqrt(self.size)) != int(math.sqrt(self.size)) - 1
+
+
+	def expand_right(self):
+		clone = self.__clone__()
+		if clone.can_expand_right():
+			clone = self.__clone__()
+			clone.switch_indexes(self.blank_index,self.blank_index+1)
+			clone.set_blank_point(self.blank_index+1)
+			clone.move_list.append("right")
+			return clone
+		else:
+			return False
+
+	def expand_left(self):
+		clone = self.__clone__()
+		if clone.can_expand_left():
+			clone = self.__clone__()
+			clone.switch_indexes(self.blank_index,self.blank_index-1)
+			clone.set_blank_point(self.blank_index-1)
+			clone.move_list.append("left")
+			return clone
+		else:
+			return False
+
+	def expand_up(self):
+		clone = self.__clone__()
+		if clone.can_expand_up():
+			clone = self.__clone__()
+			clone.switch_indexes(self.blank_index,self.blank_index-int(math.sqrt(self.size)))
+			clone.set_blank_point(self.blank_index-int(math.sqrt(self.size)))
+			clone.move_list.append("up")
+			return clone
+		else:
+			return False
+
+	def expand_down(self):
+		clone = self.__clone__()
+		if clone.can_expand_down():
+			clone = self.__clone__()
+			clone.switch_indexes(self.blank_index,self.blank_index+int(math.sqrt(self.size)))
+			clone.set_blank_point(self.blank_index+int(math.sqrt(self.size)))
+			clone.move_list.append("down")
+			return clone
+		else:
+			return False
+
+	def expand_all(self):
+		expand_list= []
+		up = self.expand_up()
+		if up: # If up returned a BoardNode (and not False)
+			expand_list.append(up)
+		down = self.expand_down()
+		if down: 
+			expand_list.append(down)
+		left = self.expand_left()
+		if left: 
+			expand_list.append(left)
+		right = self.expand_right()
+		if right: 
+			expand_list.append(right)
+		return expand_list
+
+	def __lt__(self, other):
+		if isinstance(other, BoardNode):
+			return (self.distanceFromTarget < other.distanceFromTarget)
+
+	def __eq__(self, other):
+		if isinstance(other, BoardNode):
+			return (self.distanceFromTarget == other.distanceFromTarget)
+		elif isinstance(other, bool):
+			if (other==True):
+				return False
+			else:
+				return True
+
+	def __ne__(self, other):
+		if isinstance(other, BoardNode):
+			return (self.distanceFromTarget != other.distanceFromTarget)
+		elif isinstance(other, bool):
+			if (other==False):
+				return True
+			else:
+				return True
+
+
+class AI(object):
+	"""
+		Class that runs ai algorithms on BoardNodes
+		Propreties:
+			primary_board- holds the starting board position
+			total_expanded_nodes - holds the number of nodes expanded during algorithm
+			target_board - the desired end state
+			start_time - timestamp for when an algorithm starts 
+			time_limit - value to store limit for the amount of time an algorithm may run for
+			algorithm_name - hold the name of the algorithm run
+		Methods:
+			f_of_n - returns the addition of two heuristics
+			out_of_place_heurisitic_function - returns the number of values that are in the wrong indexes
+											   given a board and a desired BoardNode
+			manhattan_function- returns the sum of distance between each value and its desired index given
+								a board and a desired BoardNode
+			distance - returns the distance between two indexes (copy of the distance function in BoardNode)
+			location - locates the index of a value in a BoardNode
+			df_branch_and_bound- runs a depth first branch and bound search to solve puzzle
+			dls- recursive function to perform a depth_limited_search on a BoardNode
+			depth_limited_search- helper function to start dls
+			iterative_deepening_search- runs iterations of depth_limited_search increasing the depth until
+										a solution is found
+			iterative_deepening_a_star- runs itterations of a_star_branch_and_bound increasing the branch and 
+										bound limit until a solution is found
+			a_star_branch_and_bound- performs a start algorithm for all nodes under a certain evaluation limit
+			a_star_search- performs the classic a start algorithm on a BoardNode
+	"""
+
+	def __init__(self, primary_board, target_board, time_limit = (60*30)):
+		self.primary_board = primary_board
+		self.total_expanded_nodes = 0
+		self.target_board = target_board
+		self.start_time = time.time()
+		self.time_limit = time_limit
+		self.algorithm_name = "undeclared"
+
+	""" Functions for heuristics"""
+	def f_of_n(self, g_of_n, h_star):
+		return g_of_n + h_star
+
+	def out_of_place_heurisitic_function(self, board, target_board):
+		total_out_of_place = 0
+		for i in range(len(board)): # loop through board
+			if(board[i]!= target_board[i]):# if a position does not contain the value on our target board
+				total_out_of_place+=1 # add one to the number of out of place positions
+		return total_out_of_place
+
+	def manhattan_function(self, board, target_board):
+		sum_distance= 0
+		row_size= int(math.sqrt(len(board)))
+		for i in range(len(board)): # loop through the board to calculate the total distance between each value and its desired position
+			sum_distance+=self.distance(i,self.location(target_board,board[i]),row_size)
+		return sum_distance
+
+	def distance(self, from_v, to_v, row_size=3 ):
+		from_row, from_column = from_v//row_size, from_v % row_size
+		to_row, to_column = to_v//row_size, to_v % row_size
+		y_differance = abs(to_row-from_row)
+		x_differance = abs(to_column-from_column)
+		return x_differance+y_differance
+
+	def location(self, board, value):
+		for i in range(len(board)):
+			if board[i] == value:
+				return i
+		print( "error with location function")
+
+	""" End functions for heuristics"""
+
+
+	"""AI Algorithm functions"""
+	def df_branch_and_bound(self, h_function):
+		"""
+			Implements branch and bound algorithm. 
+			Parameter:
+				h_function - the desired heuristic function to use
+			Returns:
+				BoardNode of the assumed solvd state that contains the movelist required to get there. 
+
+			Method:
+				It populates open_nodes with the AI's given start BoardNode
+				It then expands the first node in open_nodes to examine possible future states
+				It places the expanded node on the list of closed_nodes. If this node is a 
+				solution it checks to see if a better solution has been found, if so ignore this one, 
+				otherwise store this as the best solution
+
+				It eliminates any BoardNodes from the expanded nodes which are no more promising then 
+				equivilent states that have already been examined. It also eliminates states that can't 
+				produce solutions that are better than already discovered solutions
+
+				It organizes those remaining states by thier promise as evalueded by the given heuristic
+				It places them in order of increasing promise from left to right and places that
+				list on the end of the list of open_nodes. 
+
+				It then removes the last position from the open_nodes list and repeats the process
+
+		"""
+		self.algorithm_name = "Depth-first branch and bound"
+		print (self.algorithm_name)
+		self.start_time = time.time() #mark start time
+		open_nodes = [self.primary_board]# create a list to hold open nodes
+		closed_nodes = {}# Dictionary to hold close nodes
+		best_solution_score = " "
+		best_solution  = self.primary_board
+		iteration_counter = 0# keep track of itterations to allows users to understand where it is at
+
+		while (len(open_nodes) > 0):
+			if (time.time() - self.start_time) > self.time_limit : 
+				print("FUNCTION CANCLED TIME LIMIT REACHED ")
+				self.end_time = time.time()
+				del closed_nodes
+				return [-1, best_solution]
+			current_node = open_nodes.pop(len(open_nodes)-1) # Take the last open_node aka the best of guess fromo recently opened nodes for where the solution will be
+			current_guess_score = (self.f_of_n(current_node.get_number_of_moves(),
+		 						  h_function(current_node.get_board(), self.target_board.get_board())))# calculate the huristic value
+			if current_node.__str__() in closed_nodes: # Avoid duplicates by checking if there was a node with the same board explored
+				in_a_list= False # current node is in closed list
+				# Since closed node is made to be a dictionary mapping strings to BoardNodes inspect all the boardNodes in closedNodes with 
+					# The same board values
+				for close_node in closed_nodes[current_node.__str__()]: 
+					if close_node.get_number_of_moves() < new_node.get_number_of_moves():# If a board with the same board value was reach in fewer moves
+						in_a_list = True# Ignore this BoardNode
+						break
+				if in_a_list == False:# If other boardnodes with the same board were inspected but this boardnode was reached in less moves
+					closed_nodes[current_node.__str__()] = [current_node] # Replace all BoardNodes with the board previously look at with this one, because this is the only important one
+			else:
+				closed_nodes[current_node.__str__()] = [current_node]# Place this node in closed nodes because we are now looking at it
+			if(iteration_counter % 500 == 0):
+				print (iteration_counter)
+			iteration_counter+=1
+			if current_node.get_board() == self.target_board.get_board():# if we have a solution
+				if (isinstance( best_solution_score, str)):# if it is our first solution we found
+					best_solution = current_node
+					best_solution_score = current_guess_score
+					print ("found possible solution ")
+				elif (current_guess_score <= best_solution_score): # if it is not the first solution but it is the best solution
+					best_solution_score = current_guess_score
+					best_solution = current_node
+					print ("found possible solution ")
+			else:
+				expand_list =  current_node.expand_all() # Get all the next possible states
+				self.total_expanded_nodes += len(expand_list) # keep track of # of expanded nodes
+				to_add_list = [] # A list to hold the BoardNodes we will end up adding to openNodes in the correct order
+				for new_node in expand_list: # look through the next possible states
+					in_a_list= False 
+					if new_node.__str__() in closed_nodes: # if a state was previously inspected
+						for close_node in closed_nodes[new_node.__str__()]: 
+							if close_node.get_number_of_moves() <= new_node.get_number_of_moves(): # and the previous inspections occured closer to the root node
+								in_a_list = True # don't add it to our open list
+								break
+					if in_a_list == False: # If it was never inspected before
+						child_guess_score = (self.f_of_n(new_node.get_number_of_moves(),
+									  h_function(new_node.get_board(), self.target_board.get_board()))) # create an estimation for the child node
+						if  (isinstance( best_solution_score, str)) or child_guess_score <= best_solution_score: # if no solution has been found, or the estimate is better the the current best score
+							# Since we may get a better solution by inspecting this child and its decendance add it to the inspection list
+							# Start insert sort the child into add_list by using the estimations as a measure  
+							counter= 0
+							# find the index to insert it into add_list
+							while (counter < len(to_add_list) and
+							    child_guess_score < (self.f_of_n(to_add_list[counter].get_number_of_moves(),
+								  					  h_function(to_add_list[counter].get_board(), 
+								  					  self.target_board.get_board())))):
+								counter +=1 
+							to_add_list.insert(counter, new_node) # insert it at that index
+				open_nodes= open_nodes + to_add_list # all the new nodes to the end of the open list
+				# the next round will start by inspecting the last element in the list aka the child with the highest potential
+		self.end_time = time.time()
+		del closed_nodes
+		return [1,best_solution]
+
+
+	# NOT REQUIRED FOR ASSIGNMENT Helper function
+	def depth_limited_search(self, limit):
+		return self.dls(self.primary_board, limit)
+	# # NOT REQUIRED FOR ASSIGNMENT  Helper function
+	def dls(self, node, limit):
+		cuttoff_occured = False
+		if (node.get_board()== self.target_board.get_board()): # got answer
+			return [1,node]
+		elif (node.get_number_of_moves() >= limit): # got cuttoff
+			return [0, node]
+		else:
+			expand_list  = node.expand_all()
+			self.total_expanded_nodes += len(expand_list)
+			for child_node in expand_list:
+				result = self.dls(child_node,limit)
+				if result[0] == 0 :
+					cuttoff_occured = True # cuttoff occured but we don't want to leave loop
+				elif result[0] != -1:
+					return result
+			if cuttoff_occured == True: # aka one of the children was cut off and none of the others got a result
+				return result #[0, node] # return the last one explored that got got off  
+			else: # none were cut off and none reached the solution
+				return [-1, 0] # failure occured
+	# NOT REQUIRED FOR ASSIGNMENT 
+	def iterative_deepening_search(self): 
+		self.algorithm_name= "Iterative deepening"
+		print (self.algorithm_name)
+		self.start_time = time.time()
+		iteration_counter = 1
+		while(True):
+			result = self.depth_limited_search(iteration_counter)
+			if (time.time() - self.start_time) > self.time_limit : 
+				print("FUNCTION CANCLED TIME LIMIT REACHED ")
+				self.end_time = time.time()
+				return result
+			iteration_counter+=1
+			if(iteration_counter % 500 == 0):
+				print (iteration_counter)
+			if result[0] != 0: # aka there was an itteration that failed (such as had no more expansions) or it succeeded
+				self.end_time = time.time()
+				return result 
+
+
+	def iterative_deepening_a_star(self, h_function):
+		"""
+			Implements iterative deepening a star algorithm
+			Runs a star branch and bound with a limit
+			Looks at result to decide if the run was:
+			a success --> returns the result
+			a failure --> ends the function returns the failure data
+			an incomplete run --> a node broke the limit set. Therefore update the limit and rerun
+		"""
+		self.algorithm_name ="Iterative deepening a*"
+		print (self.algorithm_name)
+		self.start_time = time.time() # mark the start time
+		# Give an optimisic estimate to how many moves the computer thinks it will take
+		eval_score = (self.f_of_n(self.primary_board.get_number_of_moves(),
+									  h_function(self.primary_board.get_board(), self.target_board.get_board())))
+		iteration_counter = 1 # only used to print how many iterations the algorithm required
+		while(True):
+			if((iteration_counter -1) % 500 == 0):
+				print (iteration_counter)
+			iteration_counter+=1
+			# Run a star branch and bound which returns a tuple of a [success metric, first node to break limit, new limit to set]
+			# Save that tuple in result
+			result = self.a_star_branch_and_bound(self.primary_board, eval_score, h_function)
+			if (time.time() - self.start_time) > self.time_limit : 
+				print("FUNCTION CANCLED TIME LIMIT REACHED ")
+				self.end_time = time.time()
+				return result
+			if result[0] < 1: # If the success metric shows it was not successful 
+				eval_score = result[2] 
+			else: # If there was an itteration that failed (such as had no more expansions) or it succeeded
+				self.end_time = time.time() 
+				return result 
+	# helper function
+	def a_star_branch_and_bound(self, node, limit, h_function):
+		"""
+			Recursive function that evalues a node based on h_function
+			Compares evaluation to the passed limit:
+				-If greater than limit it returns that the limit was broken
+			Checks if the BoardNode is the goal state
+				-If so, return the goal state
+			Otherwise it expands node, runs this algorithm on each child
+				-If a child was the desired node return it 
+				-If no child found the solution then figure out which child 
+				broke the limit the least. Return that child and it's score 
+				with a mark that the solution wasn't found
+		"""
+		eval_score = (self.f_of_n(node.get_number_of_moves(),
+									  h_function(node.get_board(), self.target_board.get_board())))
+		if eval_score > limit: # Broke the limit so return the value that broke the limit
+			return [0, node, eval_score]
+		if node.get_board() == self.target_board.get_board(): # solution found return solution
+			return [1, node, eval_score]
+		min_score = ""
+		min_node = ""
+		expand_list  = node.expand_all() # Get all children of the current node
+		self.total_expanded_nodes += len(expand_list) # keep count of the number of expanded nodes
+		for child_node in expand_list:
+			# Run this algorithm for all children of the current node and save the result
+			result = self.a_star_branch_and_bound(child_node, limit, h_function) 
+			if result[0] == 1: # If a child found the solution return the child with correct marker
+				return result
+			# If this is the minimum break point, set min equal to this score and update the min node
+			if (isinstance( min_score, str) or result[2] < min_score):
+				min_score = result[2] 
+				min_node = child_node
+		return [-1, min_node, min_score]
+
+	def a_star_search(self, h_function):
+		"""
+			This function implements the a star algorithm on BoardNodes
+
+			Starting with the primary board node
+
+			Looks at the most promising node. 
+			If it is the goal return that
+			Generates children of that node
+			Places the node in the closed dictonary
+			Looks at each child to see if a more promising node of the same board is in the open or closed dictonary
+			If not then get rid of all nodes with the same board and place this node board in the open list heap by
+			evaluating each node in the open list heap by f_of_n(number of moves , h_function)
+			Then take the most promising node from the top of the heap and repeat
+
+		"""
+		self.algorithm_name = "a_star"
+		print (self.algorithm_name)
+		# Keep track of evalution score within each node itself instead of computing it every time
+		# NOTE: If I had more time I would have updated some of the other functions to do this as well to keep DRY
+		self.primary_board.setDistance(self.f_of_n(self.primary_board.get_number_of_moves(), h_function(self.primary_board.get_board(), self.target_board.get_board())))
+		self.start_time = time.time() # Keep track of start time
+		open_nodes = [self.primary_board] # Make a list (that will function as a heap) and Start with the starting board
+		closed_nodes = {} # Keep a dictionary to hold all the closed nodes
+		solution_not_found = True 
+		counter = 0 # Keeps track of iterations while running
+		best_guess= heappop(open_nodes)  
+		while(solution_not_found):
+			if(counter % 500 == 0):
+				print (counter)
+			counter+=1
+			if (time.time() - self.start_time) > self.time_limit: # keep track of time  
+				print("FUNCTION CANCLED TIME LIMIT REACHED ")
+				self.end_time = time.time()
+				del closed_nodes
+				return [-1, best_guess]
+			# Start things only relivant to this algorithm 
+			if best_guess.get_board() == self.target_board.get_board(): # If our best guest is right return it
+				solution_not_found = False
+				self.end_time = time.time()
+				del closed_nodes
+				return [1, best_guess] # mark that we found the solution and return the solution
+			else: # If the current node is not the solution
+				if best_guess.__str__() in closed_nodes: # If we looked at a node that had the same board as the best guess
+					in_a_list= False 
+					for close_node in closed_nodes[best_guess.__str__()]: # For all such nodes that are saved (should normally only be one)
+						if close_node < best_guess: # If the saved node is closer to the goal then the best_guess ignore the best guess 
+							in_a_list = True
+							break
+						if in_a_list == False: # If there is no better Node for this board in the closed node dictonary
+							closed_nodes[best_guess.__str__()] = [best_guess] # Place this as the only boardNode representing its board in the closed dictonary
+				else: # Since there is no other node with the same board
+					closed_nodes[best_guess.__str__()] = [best_guess] # Place this node in the closed node dictonary
+				expand_list = best_guess.expand_all() # Get the children of this node
+				self.total_expanded_nodes += len(expand_list) # keep track of number of nodes expanded
+				heapmod= False # keeps track if we need to heapify
+				for new_node in expand_list: # For each child node
+					# Evaluate the child
+					new_node.setDistance(self.f_of_n(new_node.get_number_of_moves(), h_function(new_node.get_board(), self.target_board.get_board())))
+					in_a_list= False 
+					key= new_node.get_board().__str__() # Get the key for identical boards
+					if key in closed_nodes: # check if other nodes in the closed dictionary have identical baords
+						for close_node in closed_nodes[new_node.__str__()]: # Look at all those identical boards
+							if close_node <= new_node: # If that boardNode was reached in fewer steps
+								in_a_list = True # Don't bother with our boardNode because we already checked out a better oppurtunity
+								break
+						if in_a_list == False:# If there are no better nodes, but there are identical boards
+							heappush(open_nodes, new_node) # Place this board via this boardNode into the open heap
+							del closed_nodes[new_node.__str__()] # Remove this board from the dictonary
+							in_a_list = True # mark that it was dealt with
+					if not in_a_list: # if it wasn't in the closed List
+						for open_node in open_nodes: # Look at all the nodes in the open node list heap
+							if new_node.get_board() == open_node.get_board(): # if any share the same board of our child node
+								in_a_list = True 
+								if new_node < open_node: # If our child node is  was reached in less moves
+								#	Switch out that open node with our new node
+									open_node.parent= copy.deepcopy(new_node.parent)
+									open_node.move_list = copy.deepcopy(new_node.move_list)
+									open_node.distanceFromTarget = copy.deepcopy(new_node.distanceFromTarget)
+									open_node.ticks = copy.deepcopy(new_node.ticks)
+									heapmod = True # make sure open nodes stays a heap because we just edited an item in place which should change its value
+									break 
+					if not in_a_list: # If it wasn't in the closed or open lists
+						heappush(open_nodes, new_node) # Place it in the heap 
+				if (heapmod):
+					heapify(open_nodes)
+			best_guess= heappop(open_nodes) # sSt the new best guess to the node with the lowest evaluation score
+			"""End AI Algorithm functions"""
+# end Class AI
+
+
+"""
+	START MAIN PROGRAM
+
+	Generates a list of starting boards
+	Creates a goal BoardNode
+
+	Loops through start boards
+		Creates 4 Ai's with the current startboard and the goalboard
+		each ai runs a different algorithm
+		Prints the metrics to an excel file in a nice format, 
+		Prints the run data to a different file
+		Prints the errors in a third file 
+"""
+
+excelText = "Board_Number\tAlgorithm\tTime of Algorithm\tExpanded Nodes\tSteps to get there\tTime till Optimal Solution\n"
+printText = ""
+errorPrintText = ""
+errorExcelText = ""
+printText+=("\nFirst Start board: ")
+goalboard = BoardNode([1,2,3,8,"_",4,7,6,5])
+startboards = [BoardNode([1,3,4,8,6,2,7,"_",5]), BoardNode([2,8,1,"_", 4,3,7,6,5]), BoardNode([2,8,1, 4,6,3,"_",7,5]),BoardNode([5,6,7,4,"_",8,3,2,1])  ]
+
+#startboards = [BoardNode([7,6,4,8,"_",1,5,3,2]) ]
+#goalboard = BoardNode([1,2,3,4,"_",5,6,7,8]) I believe this is impossible from the above state
+
+counter = 0
+for startboard in startboards:
+	counter+=1
+	printText+=("\nSTARTBOARD:: \n")
+	printText+=(startboard.__str__())
+	aiden_1 = AI(startboard,goalboard)
+	aiden_2 = AI(startboard,goalboard)
+	aiden_3 = AI(startboard,goalboard)
+	aiden_4 = AI(startboard,goalboard)
+	ai_list = [aiden_1,aiden_2,aiden_3,aiden_4]
+	heuristic_a = aiden_1.out_of_place_heurisitic_function
+	heuristic_b = aiden_2.manhattan_function
+
+	solution1 = aiden_1.a_star_search(heuristic_a)
+	#solution1 = aiden_1.a_star_search(heuristic_b)
+	solution2 = aiden_2.a_star_search(heuristic_b)
+	solution3 = aiden_3.df_branch_and_bound(heuristic_b)
+	solution4 = aiden_4.iterative_deepening_a_star(heuristic_b)
+
+	# First AI 
+	printText+= ("\nFirst Ai using " + aiden_1.algorithm_name + " search with a out of place heurisitic : ")
+	if solution1[0] == 1:
+		solution1= solution1[1]
+		excelText+= "%d\t" %(counter)
+		excelText+= aiden_1.algorithm_name + "with a out of place heurisitic:"
+		excelText+= "\t%f\t%d\t" %((aiden_1.end_time- aiden_1.start_time), aiden_1.total_expanded_nodes)
+		excelText+= solution1.move_list.__str__() +"\tTime till Optimal Solution\n" 
+		
+		printText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution1.__str__())
+		printText+= ("\nSteps to get there are : " + solution1.move_list.__str__() )
+		printText+= ("\nTime took: %f seconds" %(aiden_1.end_time- aiden_1.start_time))
+		printText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_1.total_expanded_nodes)
+		printText+= ("\nTotal number of moves is %d \n\n" %len(solution1.move_list) )
+	else:
+		printText+=("\nerror no solution")
+		solution1= solution1[1]
+		errorExcelText+= "%d\t" %(counter)
+		errorExcelText+= aiden_1.algorithm_name + "with a out of place heurisitic:"
+		errorExcelText+= "\t%f\t%d\t" %((aiden_1.end_time- aiden_1.start_time), aiden_1.total_expanded_nodes)
+		errorExcelText+= solution1.move_list.__str__() +"\tTime till Optimal Solution\n" 
+		
+		errorPrintText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution1.__str__())
+		errorPrintText+= ("\nSteps to get there are : " + solution1.move_list.__str__() )
+		errorPrintText+= ("\nTime took: %f seconds" %(aiden_1.end_time- aiden_1.start_time))
+		errorPrintText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_1.total_expanded_nodes)
+		errorPrintText+= ("\nTotal number of moves is %d \n\n" %len(solution1.move_list) )
+
+	# Second AI
+	printText+= ("\nSecond Ai using " + aiden_2.algorithm_name + " search with a Manhattan distance heuristic: ")
+	if solution2[0] == 1:
+		solution2= solution2[1]
+		excelText+= "%d\t" %(counter)
+		excelText+= aiden_2.algorithm_name + "with a Manhattan distance heurisitic:"
+		excelText+= "\t%f\t%d\t" %((aiden_2.end_time- aiden_2.start_time), aiden_2.total_expanded_nodes)
+		excelText+= solution2.move_list.__str__() +"\tTime till Optimal Solution\n" 
+
+		printText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution2.__str__())
+		printText+= ("\nSteps to get there are : " + solution2.move_list.__str__() )
+		printText+= ("\nTime took: %f seconds" %(aiden_2.end_time- aiden_2.start_time))
+		printText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_2.total_expanded_nodes)
+		printText+= ("\nTotal number of moves is %d \n\n" %len(solution2.move_list) )
+	else:
+		printText+=("\nerror no solution")
+		solution2= solution2[1]
+		errorExcelText+= "%d\t" %(counter)
+		errorExcelText+= aiden_2.algorithm_name + "with a Manhattan distance heurisitic:"
+		errorExcelText+= "\t%f\t%d\t" %((aiden_2.end_time- aiden_2.start_time), aiden_2.total_expanded_nodes)
+		errorExcelText+= solution2.move_list.__str__() +"\tTime till Optimal Solution\n" 
+
+		errorPrintText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution2.__str__())
+		errorPrintText+= ("\nSteps to get there are : " + solution2.move_list.__str__() )
+		errorPrintText+= ("\nTime took: %f seconds" %(aiden_2.end_time- aiden_2.start_time))
+		errorPrintText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_2.total_expanded_nodes)
+		errorPrintText+= ("\nTotal number of moves is %d \n\n" %len(solution2.move_list) )
+
+	# Third AI
+	printText+= ("\nThird Ai using " + aiden_3.algorithm_name + " search with a Manhattan distance heuristic: ")
+	if solution3[0] == 1:
+		solution3= solution3[1]
+		excelText+= "%d\t" %(counter)
+		excelText+= aiden_3.algorithm_name + "with a Manhattan distance heurisitic:"
+		excelText+= "\t%f\t%d\t" %((aiden_3.end_time- aiden_3.start_time), aiden_3.total_expanded_nodes)
+		excelText+= solution3.move_list.__str__() +"\t"
+		excelText+=	"%f\n" %(solution3.ticks-aiden_3.start_time)
+
+		printText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution3.__str__())
+		printText+= ("\nSteps to get there are : " + solution3.move_list.__str__() )
+		printText+= ("\nTime took: %f seconds" %(aiden_3.end_time- aiden_3.start_time))
+		printText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_3.total_expanded_nodes)
+		printText+= ("\nTotal number of moves is %d \n\n" %len(solution3.move_list) )
+	else:
+		solution3= solution3[1]
+		printText+=("\nerror no solution")
+		errorExcelText+= "%d\t" %(counter)
+		errorExcelText+= aiden_3.algorithm_name + "with a Manhattan distance heurisitic:"
+		errorExcelText+= "\t%f\t%d\t" %((aiden_3.end_time- aiden_3.start_time), aiden_3.total_expanded_nodes)
+		errorExcelText+= solution3.move_list.__str__() +"\t"
+		errorExcelText+=	"%f\n" %(solution3.ticks-aiden_3.start_time)
+
+		errorPrintText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution3.__str__())
+		errorPrintText+= ("\nSteps to get there are : " + solution3.move_list.__str__() )
+		errorPrintText+= ("\nTime took: %f seconds" %(aiden_3.end_time- aiden_3.start_time))
+		errorPrintText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_3.total_expanded_nodes)
+		errorPrintText+= ("\nTotal number of moves is %d \n\n" %len(solution3.move_list) )
+
+	# Fourth AI
+	printText+= ("\nFourth Ai using " + aiden_4.algorithm_name + " search with a Manhattan distance heuristic: ")
+	if solution4[0] == 1:
+		solution4= solution4[1]
+		excelText+= "%d\t" %(counter)
+		excelText+= aiden_4.algorithm_name + "with a Manhattan distance heurisitic:"
+		excelText+= "\t%f\t%d\t" %((aiden_4.end_time- aiden_4.start_time), aiden_4.total_expanded_nodes)
+		excelText+= solution4.move_list.__str__() +"\tTime till Optimal Solution\n" 
+
+		printText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution4.__str__())
+		printText+= ("\nSteps to get there are : " + solution4.move_list.__str__() )
+		printText+= ("\nTime took: %f seconds" %(aiden_4.end_time- aiden_4.start_time))
+		printText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_4.total_expanded_nodes)
+		printText+= ("\nTotal number of moves is %d \n\n" %len(solution4.move_list) )
+	else:
+		solution4= solution4[1]
+		printText+=("\nerror no solution")
+		errorExcelText+= "%d\t" %(counter)
+		errorExcelText+= aiden_4.algorithm_name + "with a Manhattan distance heurisitic:"
+		errorExcelText+= "\t%f\t%d\t" %((aiden_4.end_time- aiden_4.start_time), aiden_4.total_expanded_nodes)
+		errorExcelText+= solution4.move_list.__str__() +"\tTime till Optimal Solution\n" 
+
+		errorPrintText+= ("\nstarting board is: \n" + startboard.__str__() + " \ngoal is: \n" +
+			   goalboard.__str__() + "\nAssumed solved state is: \n" + solution4.__str__())
+		errorPrintText+= ("\nSteps to get there are : " + solution4.move_list.__str__() )
+		errorPrintText+= ("\nTime took: %f seconds" %(aiden_4.end_time- aiden_4.start_time))
+		errorPrintText+= ("\nTotal number of expanded nodes is %d \n\n" %aiden_4.total_expanded_nodes)
+		errorPrintText+= ("\nTotal number of moves is %d \n\n" %len(solution4.move_list) )
+
+
+filename =  "Jason_Farkas_AI_Assignment1.txt"
+out_file = open(filename, "wt")
+out_file.write(printText)
+out_file.write("/n/n/n/n Errors: /n "+ errorPrintText)
+out_file.close()
+excelFile = "Jason_Farkas_AI_Assignment1_Excel.txt"
+out_file = open(excelFile, "wt")
+out_file.write(excelText)
+out_file.close()
+filename =  "Jason_Farkas_AI_Assignment1_errors.txt"
+out_file = open(filename, "wt")
+out_file.write(errorExcelText)
+out_file.write("\n\n\n\nErrors: \n")
+out_file.write(errorPrintText)
+out_file.close()
+
+
+print (printText)
+print("\n\nErrors: \n")
+print (errorPrintText)
+

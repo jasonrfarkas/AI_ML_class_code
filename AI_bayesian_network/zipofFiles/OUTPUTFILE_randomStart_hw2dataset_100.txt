@@ -1,0 +1,1292 @@
+OUTPUTFILE_randomStart_hw2dataset_100.txt
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.514664
+P(Gender=M )=0.485336
+
+TableView:
+Gender	
+0:	0.485336	
+1:	0.514664	
+
+
+P(Weight=less_than_130 | Gender=M )=0.339625
+P(Weight=less_than_130 | Gender=F )=0.330639
+P(Weight=greater_than_130 | Gender=F )=0.669361
+P(Weight=greater_than_130 | Gender=M )=0.660375
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.660375	0.669361	
+1:	0.339625	0.330639	
+
+
+P(Height=less_than_55 | Gender=M )=0.416819
+P(Height=less_than_55 | Gender=F )=0.393855
+P(Height=greater_than_55 | Gender=F )=0.606145
+P(Height=greater_than_55 | Gender=M )=0.583181
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.583181	0.606145	
+1:	0.416819	0.393855	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003876985112242437)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004952289658376685)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006522678930593884)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.008730350569805978)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.011774219828851074)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01592249714821037)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.02152674782706754)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.029034497839461437)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03899439275056693)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.052042837737701575)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06885361577303684)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0900232104873453)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.11585902906824685)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1460469321489768)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.179218835171298)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.21254219123613893)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.24160207399245337)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2609482659319724)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.26553384830140203)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.25272655164565094)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.22386875281421226)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.18422090502838273)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.14104735317118866)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10095262562293783)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0680258869946897)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04352065003985217)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.026667824500520965)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.015781998136503717)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0090870378731438)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005122380389138925)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.002841230909893966)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0015568988966379038)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000845
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.522483
+2	-262.518606
+3	-262.513654
+4	-262.507131
+5	-262.498401
+6	-262.486627
+7	-262.470704
+8	-262.449178
+9	-262.420143
+10	-262.381149
+11	-262.329106
+12	-262.260252
+13	-262.170229
+14	-262.054370
+15	-261.908323
+16	-261.729104
+17	-261.516562
+18	-261.274960
+19	-261.014012
+20	-260.748478
+21	-260.495751
+22	-260.271883
+23	-260.087662
+24	-259.946614
+25	-259.845662
+26	-259.777636
+27	-259.734115
+28	-259.707447
+29	-259.691665
+30	-259.682578
+31	-259.677456
+32	-259.674615
+33	-259.673058
+
+
+ 	  0 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.513462
+P(Gender=M )=0.486538
+
+TableView:
+Gender	
+0:	0.486538	
+1:	0.513462	
+
+
+P(Weight=less_than_130 | Gender=M )=0.340512
+P(Weight=less_than_130 | Gender=F )=0.329777
+P(Weight=greater_than_130 | Gender=F )=0.670223
+P(Weight=greater_than_130 | Gender=M )=0.659488
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.659488	0.670223	
+1:	0.340512	0.329777	
+
+
+P(Height=less_than_55 | Gender=M )=0.391037
+P(Height=less_than_55 | Gender=F )=0.418231
+P(Height=greater_than_55 | Gender=F )=0.581769
+P(Height=greater_than_55 | Gender=M )=0.608963
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.608963	0.581769	
+1:	0.391037	0.418231	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004870108576255916)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003917523051768512)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0034712413802822084)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0034482180519717076)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003819311858819674)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004601705389688959)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005857016413642668)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.007694027739546527)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.010275376645552114)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.013827590199468887)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01865343183629875)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.02514439491653775)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03378893574370068)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04516814770295241)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05992459363648095)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.07868224778263766)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1018885560055196)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.12955103830620374)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.16086574558948996)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1938036700810244)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.22484179144572636)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.24915132547545227)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.26154564571749006)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2581642921834941)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.23825048061485177)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.20493501235750955)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.16430414007902527)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.12316251571030534)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08680990376507225)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05795974805101878)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.036956272404324864)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.022686503608724706)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.013508302217644541)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00785246896003855)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0044806081852470925)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.002520549903806568)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0014027561763327867)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000774
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.540724
+2	-262.535854
+3	-262.531937
+4	-262.528466
+5	-262.525017
+6	-262.521198
+7	-262.516596
+8	-262.510739
+9	-262.503045
+10	-262.492770
+11	-262.478942
+12	-262.460289
+13	-262.435144
+14	-262.401356
+15	-262.356187
+16	-262.296263
+17	-262.217581
+18	-262.115692
+19	-261.986141
+20	-261.825275
+21	-261.631472
+22	-261.406630
+23	-261.157478
+24	-260.895933
+25	-260.637769
+26	-260.399518
+27	-260.194583
+28	-260.030279
+29	-259.907116
+30	-259.820306
+31	-259.762347
+32	-259.725390
+33	-259.702704
+34	-259.689196
+35	-259.681343
+36	-259.676863
+37	-259.674342
+38	-259.672939
+
+ Found a better answer
+Best Answer has a likelyhood of
+-259.672939247
+
+ 	  1 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.506969
+P(Gender=M )=0.493031
+
+TableView:
+Gender	
+0:	0.493031	
+1:	0.506969	
+
+
+P(Weight=less_than_130 | Gender=M )=0.324582
+P(Weight=less_than_130 | Gender=F )=0.345131
+P(Weight=greater_than_130 | Gender=F )=0.654869
+P(Weight=greater_than_130 | Gender=M )=0.675418
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.675418	0.654869	
+1:	0.324582	0.345131	
+
+
+P(Height=less_than_55 | Gender=M )=0.426015
+P(Height=less_than_55 | Gender=F )=0.384563
+P(Height=greater_than_55 | Gender=F )=0.615437
+P(Height=greater_than_55 | Gender=M )=0.573985
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.573985	0.615437	
+1:	0.426015	0.384563	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.012204735442651327)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00926600256968868)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0075861432595161205)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006882254093909523)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.007007307783680972)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00791951031806093)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.009667153228747338)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.012384134743854247)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.016292943553821715)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.021712178153848072)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.02906465423421878)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03887951575677562)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05177701580316807)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06841751558926035)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0893878011309539)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1149925353399226)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.14492774685146514)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.17785647029626261)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.21100477971492637)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2400409667542931)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2596000603812172)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.264677535658393)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2525923841217832)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.22453539949532342)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.18556589734606632)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.14279192723813594)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10277502386270498)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06967121305149249)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04485251979747318)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.027658554473077857)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01647187864710986)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00954331418648735)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005412318380024317)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0030198482105561197)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.001664330260666702)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000909
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.561311
+2	-262.549106
+3	-262.539840
+4	-262.532254
+5	-262.525371
+6	-262.518364
+7	-262.510445
+8	-262.500778
+9	-262.488393
+10	-262.472100
+11	-262.450388
+12	-262.421324
+13	-262.382444
+14	-262.330667
+15	-262.262250
+16	-262.172862
+17	-262.057869
+18	-261.912941
+19	-261.735085
+20	-261.524080
+21	-261.284039
+22	-261.024439
+23	-260.759762
+24	-260.507169
+25	-260.282634
+26	-260.097068
+27	-259.954276
+28	-259.851501
+29	-259.781830
+30	-259.736977
+31	-259.709319
+32	-259.692847
+33	-259.683304
+34	-259.677891
+35	-259.674871
+36	-259.673207
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672939247
+
+ 	  2 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.508721
+P(Gender=M )=0.491279
+
+TableView:
+Gender	
+0:	0.491279	
+1:	0.508721	
+
+
+P(Weight=less_than_130 | Gender=M )=0.350007
+P(Weight=less_than_130 | Gender=F )=0.320508
+P(Weight=greater_than_130 | Gender=F )=0.679492
+P(Weight=greater_than_130 | Gender=M )=0.649993
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.649993	0.679492	
+1:	0.350007	0.320508	
+
+
+P(Height=less_than_55 | Gender=M )=0.407872
+P(Height=less_than_55 | Gender=F )=0.402226
+P(Height=greater_than_55 | Gender=F )=0.597774
+P(Height=greater_than_55 | Gender=M )=0.592128
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.592128	0.597774	
+1:	0.407872	0.402226	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00597385116066107)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006994977448584905)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.008741659047871053)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.011356786584883594)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01506160414982105)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.020165434139016725)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.027076125586006583)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03630574578522783)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04846169077609375)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0642067062985916)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08416285481177965)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10872766002262324)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1377748794977265)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.17024559548713114)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.20371995029159962)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.23419857496412533)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.25644781163157404)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2651990037741143)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.25705429876438757)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2322502795475998)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.19508365627342528)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.15244946048915153)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.11126943249183796)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.07634619448975855)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04964392814531493)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.030857903621154037)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.018489617418424587)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.010760553619604707)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006122019804820411)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003423059440478937)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.001888994247053688)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.001032222208323219)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000560
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.523935
+2	-262.517961
+3	-262.510966
+4	-262.502225
+5	-262.490868
+6	-262.475806
+7	-262.455641
+8	-262.428565
+9	-262.392259
+10	-262.343797
+11	-262.279591
+12	-262.195428
+13	-262.086700
+14	-261.948925
+15	-261.778680
+16	-261.574960
+17	-261.340761
+18	-261.084313
+19	-260.819114
+20	-260.562060
+21	-260.329810
+22	-260.134726
+23	-259.982277
+24	-259.871007
+25	-259.794661
+26	-259.745017
+27	-259.714159
+28	-259.695670
+29	-259.684909
+30	-259.678787
+31	-259.675364
+32	-259.673475
+33	-259.672443
+
+ Found a better answer
+Best Answer has a likelyhood of
+-259.672442693
+
+ 	  3 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.474577
+P(Gender=M )=0.525423
+
+TableView:
+Gender	
+0:	0.525423	
+1:	0.474577	
+
+
+P(Weight=less_than_130 | Gender=M )=0.334098
+P(Weight=less_than_130 | Gender=F )=0.335998
+P(Weight=greater_than_130 | Gender=F )=0.664002
+P(Weight=greater_than_130 | Gender=M )=0.665902
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.665902	0.664002	
+1:	0.334098	0.335998	
+
+
+P(Height=less_than_55 | Gender=M )=0.410400
+P(Height=less_than_55 | Gender=F )=0.399021
+P(Height=greater_than_55 | Gender=F )=0.600979
+P(Height=greater_than_55 | Gender=M )=0.589600
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.589600	0.600979	
+1:	0.410400	0.399021	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000773
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.530820
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672442693
+
+ 	  4 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.496758
+P(Gender=M )=0.503242
+
+TableView:
+Gender	
+0:	0.503242	
+1:	0.496758	
+
+
+P(Weight=less_than_130 | Gender=M )=0.350175
+P(Weight=less_than_130 | Gender=F )=0.319627
+P(Weight=greater_than_130 | Gender=F )=0.680373
+P(Weight=greater_than_130 | Gender=M )=0.649825
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.649825	0.680373	
+1:	0.350175	0.319627	
+
+
+P(Height=less_than_55 | Gender=M )=0.402843
+P(Height=less_than_55 | Gender=F )=0.407185
+P(Height=greater_than_55 | Gender=F )=0.592815
+P(Height=greater_than_55 | Gender=M )=0.597157
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.597157	0.592815	
+1:	0.402843	0.407185	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00601352730399185)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005791516268175201)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006242001364967109)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.007371135618484459)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.009258854148185947)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.012059480344191797)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.016007931227818517)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.021429257042598238)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.028748006029729822)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03849118624128778)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05127388436949332)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06774964274637796)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08849950981084476)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.11382863537625099)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.14344817702817636)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1760620486736002)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.20897243954391342)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.237956775431428)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2577648966849324)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2634557423098727)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2522963236294231)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.22528975333875678)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.187234968445523)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.14502751126309477)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10515812218091014)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.07185746313854224)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.046647057271115955)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.029010381521345607)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.017424209829755455)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0101800142083448)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005821010617410138)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0032740212515705025)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0018185776407335652)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0010006920918499418)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000547
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.534890
+2	-262.528876
+3	-262.523085
+4	-262.516843
+5	-262.509471
+6	-262.500213
+7	-262.488153
+8	-262.472145
+9	-262.450716
+10	-262.421968
+11	-262.383477
+12	-262.332203
+13	-262.264453
+14	-262.175954
+15	-262.062125
+16	-261.918677
+17	-261.742615
+18	-261.533642
+19	-261.295686
+20	-261.037921
+21	-260.774465
+22	-260.522169
+23	-260.296879
+24	-260.109644
+25	-259.964616
+26	-259.859458
+27	-259.787601
+28	-259.740954
+29	-259.711943
+30	-259.694519
+31	-259.684339
+32	-259.678518
+33	-259.675244
+34	-259.673425
+35	-259.672425
+
+ Found a better answer
+Best Answer has a likelyhood of
+-259.672424799
+
+ 	  5 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.520595
+P(Gender=M )=0.479405
+
+TableView:
+Gender	
+0:	0.479405	
+1:	0.520595	
+
+
+P(Weight=less_than_130 | Gender=M )=0.301771
+P(Weight=less_than_130 | Gender=F )=0.365600
+P(Weight=greater_than_130 | Gender=F )=0.634400
+P(Weight=greater_than_130 | Gender=M )=0.698229
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.698229	0.634400	
+1:	0.301771	0.365600	
+
+
+P(Height=less_than_55 | Gender=M )=0.373753
+P(Height=less_than_55 | Gender=F )=0.433774
+P(Height=greater_than_55 | Gender=F )=0.566226
+P(Height=greater_than_55 | Gender=M )=0.626247
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.626247	0.566226	
+1:	0.373753	0.433774	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04847073660226897)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0640802176197326)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08380626448098383)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10800647298583499)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.13651996728322047)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.16828141011779962)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.20092857389278151)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.23062067025335864)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2523893751068158)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2612698235715243)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.25405333837693433)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.23088777836818508)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.19567004847681346)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.15475503459282436)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.11465370482551407)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08005520486250362)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05307773430212137)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03368636869134889)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.020626338528813903)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.012271943795383322)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0071384042488489285)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004080411932363859)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00230148896088167)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0012850583724457465)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000712
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.391726
+2	-262.343256
+3	-262.279175
+4	-262.195369
+5	-262.087363
+6	-261.950843
+7	-261.782561
+8	-261.581633
+9	-261.351012
+10	-261.098623
+11	-260.837353
+12	-260.583300
+13	-260.352412
+14	-260.156742
+15	-260.001987
+16	-259.887333
+17	-259.807278
+18	-259.754200
+19	-259.720514
+20	-259.699887
+21	-259.687615
+22	-259.680477
+23	-259.676397
+24	-259.674095
+25	-259.672810
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672424799
+
+ 	  6 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.477806
+P(Gender=M )=0.522194
+
+TableView:
+Gender	
+0:	0.522194	
+1:	0.477806	
+
+
+P(Weight=less_than_130 | Gender=M )=0.325019
+P(Weight=less_than_130 | Gender=F )=0.345908
+P(Weight=greater_than_130 | Gender=F )=0.654092
+P(Weight=greater_than_130 | Gender=M )=0.674981
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.674981	0.654092	
+1:	0.325019	0.345908	
+
+
+P(Height=less_than_55 | Gender=M )=0.404242
+P(Height=less_than_55 | Gender=F )=0.405828
+P(Height=greater_than_55 | Gender=F )=0.594172
+P(Height=greater_than_55 | Gender=M )=0.595758
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.595758	0.594172	
+1:	0.404242	0.405828	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.002863661037508791)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0031640575100482238)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003807220667283673)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004844692480901358)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006368165314313501)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.008515745477382097)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.011481567264240766)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.015528289717508414)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.021001298965188653)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.028341877315199326)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.038093667953774)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05089182547249038)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06741688461687545)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08828639998176868)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.11385096315598275)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.14386821700355767)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.17706915407313772)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2107284584379272)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.240501462666316)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2609073972119518)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.26672192822326224)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.25501545092879496)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.22683457765515413)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.18729726116151824)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.14374468559947218)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10300697068566933)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06940962576101128)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04435545253795681)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.027122037863534842)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.016004333401610893)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.009182827603240185)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00515599010287815)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0028477199724079583)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0015534927608200633)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000840
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.528819
+2	-262.525955
+3	-262.522791
+4	-262.518984
+5	-262.514139
+6	-262.507771
+7	-262.499255
+8	-262.487774
+9	-262.472246
+10	-262.451244
+11	-262.422902
+12	-262.384809
+13	-262.333917
+14	-262.266500
+15	-262.178214
+16	-262.064363
+17	-261.920494
+18	-261.743425
+19	-261.532697
+20	-261.292195
+21	-261.031288
+22	-260.764566
+23	-260.509551
+24	-260.282716
+25	-260.095419
+26	-259.951674
+27	-259.848667
+28	-259.779257
+29	-259.734902
+30	-259.707780
+31	-259.691776
+32	-259.682593
+33	-259.677437
+34	-259.674589
+35	-259.673036
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672424799
+
+ 	  7 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.479902
+P(Gender=M )=0.520098
+
+TableView:
+Gender	
+0:	0.520098	
+1:	0.479902	
+
+
+P(Weight=less_than_130 | Gender=M )=0.346497
+P(Weight=less_than_130 | Gender=F )=0.322540
+P(Weight=greater_than_130 | Gender=F )=0.677460
+P(Weight=greater_than_130 | Gender=M )=0.653503
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.653503	0.677460	
+1:	0.346497	0.322540	
+
+
+P(Height=less_than_55 | Gender=M )=0.424269
+P(Height=less_than_55 | Gender=F )=0.384117
+P(Height=greater_than_55 | Gender=F )=0.615883
+P(Height=greater_than_55 | Gender=M )=0.575731
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.575731	0.615883	
+1:	0.424269	0.384117	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.014091526866820914)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.018683798336041946)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.024960765971627552)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.033388486413798546)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.044529766222126455)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05901321586867425)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.07745553846808662)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10030865499209085)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1276042547630709)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.15859159508266885)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.19132966210895574)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.22241074707551434)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2471168142973852)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.26030949995816854)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2580533437092072)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2393775245462848)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2071259492974491)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.16714986264634035)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1261721151683446)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08957367999346388)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0602393510008028)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03868428798614332)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.02391173502763877)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01433245244425052)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00838441468391693)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004813091289236127)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00272324919347966)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0015239743481174628)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000846
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.494967
+2	-262.480876
+3	-262.462192
+4	-262.437231
+5	-262.403843
+6	-262.359313
+7	-262.300300
+8	-262.222844
+9	-262.122536
+10	-261.994931
+11	-261.836340
+12	-261.645010
+13	-261.422599
+14	-261.175483
+15	-260.915173
+16	-260.657120
+17	-260.417742
+18	-260.210616
+19	-260.043466
+20	-259.917294
+21	-259.827721
+22	-259.767481
+23	-259.728797
+24	-259.704885
+25	-259.690553
+26	-259.682168
+27	-259.677355
+28	-259.674632
+29	-259.673108
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672424799
+
+ 	  8 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.531617
+P(Gender=M )=0.468383
+
+TableView:
+Gender	
+0:	0.468383	
+1:	0.531617	
+
+
+P(Weight=less_than_130 | Gender=M )=0.332436
+P(Weight=less_than_130 | Gender=F )=0.337259
+P(Weight=greater_than_130 | Gender=F )=0.662741
+P(Weight=greater_than_130 | Gender=M )=0.667564
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.667564	0.662741	
+1:	0.332436	0.337259	
+
+
+P(Height=less_than_55 | Gender=M )=0.416050
+P(Height=less_than_55 | Gender=F )=0.395264
+P(Height=greater_than_55 | Gender=F )=0.604736
+P(Height=greater_than_55 | Gender=M )=0.583950
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.583950	0.604736	
+1:	0.416050	0.395264	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0026182262043903393)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0023487442383043344)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.002363690996787682)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0026477676933609473)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0032171685787147908)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0041191444265678)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005434874111813315)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.007285452357905342)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.009840935727652322)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.013332293270991613)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01806563841262232)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.024437001123374102)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03294369010632181)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04418437547087706)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05883376467193102)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.07756911350043083)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10091690384939511)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.12898598744538958)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.16107424648430424)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.19520380766954304)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2277718165636884)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.25366214486894023)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.267196804762591)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.263982710334119)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2429877523554751)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.20756464715066159)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1644653006626413)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.12124858425465845)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08367546896084832)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05449560958544453)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.033797859568096555)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.020140738250006507)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.011627459293833908)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006549234559827255)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0036201365516035366)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.001972901994975018)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0010638961963422844)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000569
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.533689
+2	-262.531071
+3	-262.528722
+4	-262.526358
+5	-262.523711
+6	-262.520493
+7	-262.516374
+8	-262.510939
+9	-262.503654
+10	-262.493813
+11	-262.480481
+12	-262.462415
+13	-262.437978
+14	-262.405034
+15	-262.360850
+16	-262.302016
+17	-262.224447
+18	-262.123530
+19	-261.994544
+20	-261.833470
+21	-261.638266
+22	-261.410494
+23	-261.156832
+24	-260.889635
+25	-260.625653
+26	-260.382665
+27	-260.175100
+28	-260.010635
+29	-259.889386
+30	-259.805711
+31	-259.751215
+32	-259.717417
+33	-259.697277
+34	-259.685649
+35	-259.679100
+36	-259.675480
+37	-259.673507
+38	-259.672443
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672424799
+
+ 	  9 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.496130
+P(Gender=M )=0.503870
+
+TableView:
+Gender	
+0:	0.503870	
+1:	0.496130	
+
+
+P(Weight=less_than_130 | Gender=M )=0.333381
+P(Weight=less_than_130 | Gender=F )=0.336644
+P(Weight=greater_than_130 | Gender=F )=0.663356
+P(Weight=greater_than_130 | Gender=M )=0.666619
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.666619	0.663356	
+1:	0.333381	0.336644	
+
+
+P(Height=less_than_55 | Gender=M )=0.389020
+P(Height=less_than_55 | Gender=F )=0.421229
+P(Height=greater_than_55 | Gender=F )=0.578771
+P(Height=greater_than_55 | Gender=M )=0.610980
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.610980	0.578771	
+1:	0.389020	0.421229	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006367483372116567)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.007154442565308727)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.008700046700994335)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.011122907886658595)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.014623397118782577)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0194914383130822)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.026115952752547855)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.034990710484009924)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.04670735879909671)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06192010745871812)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08125835278224258)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10515634610214875)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1335712335198309)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.16558908888828228)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.1989950388865509)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.23001516449534165)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.25356916343935154)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2643438165165435)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2586161205528583)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2360764465174725)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.20047565036213655)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.15841879416950633)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.11689911123249885)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0810476873062953)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05321050852518283)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.033364480451893996)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.020148104441318537)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.011807433334070083)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006759263775450108)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.003800337420670985)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0021077086807963497)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0011570176807822463)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000630
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.526182
+2	-262.519814
+3	-262.512660
+4	-262.503960
+5	-262.492837
+6	-262.478213
+7	-262.458722
+8	-262.432606
+9	-262.397615
+10	-262.350908
+11	-262.288988
+12	-262.207729
+13	-262.102573
+14	-261.969002
+15	-261.803413
+16	-261.604418
+17	-261.374403
+18	-261.120833
+19	-260.856490
+20	-260.597873
+21	-260.361797
+22	-260.161321
+23	-260.002903
+24	-259.886003
+25	-259.804956
+26	-259.751745
+27	-259.718381
+28	-259.698233
+29	-259.686425
+30	-259.679666
+31	-259.675866
+32	-259.673758
+33	-259.672601
+
+Not a better answer
+Best Answer has a likelyhood of
+-259.672424799
+
+
+ Printing conditionalProbability for best iteration of EM:
+
+P(Gender=F )=0.508482
+P(Gender=M )=0.491518
+
+TableView:
+Gender	
+0:	0.491518	
+1:	0.508482	
+
+
+P(Weight=less_than_130 | Gender=M )=0.529499
+P(Weight=less_than_130 | Gender=F )=0.146989
+P(Weight=greater_than_130 | Gender=F )=0.853011
+P(Weight=greater_than_130 | Gender=M )=0.470501
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.470501	0.853011	
+1:	0.529499	0.146989	
+
+
+P(Height=less_than_55 | Gender=M )=0.609904
+P(Height=less_than_55 | Gender=F )=0.206932
+P(Height=greater_than_55 | Gender=F )=0.793068
+P(Height=greater_than_55 | Gender=M )=0.390096
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.390096	0.793068	
+1:	0.609904	0.206932	
+
+	 ITERATION LIKELYHOOD TABLE:
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-262.534890
+2	-262.528876
+3	-262.523085
+4	-262.516843
+5	-262.509471
+6	-262.500213
+7	-262.488153
+8	-262.472145
+9	-262.450716
+10	-262.421968
+11	-262.383477
+12	-262.332203
+13	-262.264453
+14	-262.175954
+15	-262.062125
+16	-261.918677
+17	-261.742615
+18	-261.533642
+19	-261.295686
+20	-261.037921
+21	-260.774465
+22	-260.522169
+23	-260.296879
+24	-260.109644
+25	-259.964616
+26	-259.859458
+27	-259.787601
+28	-259.740954
+29	-259.711943
+30	-259.694519
+31	-259.684339
+32	-259.678518
+33	-259.675244
+34	-259.673425
+35	-259.672425
+
+-259.672424799

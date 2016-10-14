@@ -1,0 +1,808 @@
+OUTPUTFILE_randomStart_hw2dataset_50.txt
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.431312
+P(Gender=M )=0.568688
+
+TableView:
+Gender	
+0:	0.568688	
+1:	0.431312	
+
+
+P(Weight=less_than_130 | Gender=M )=0.280975
+P(Weight=less_than_130 | Gender=F )=0.429417
+P(Weight=greater_than_130 | Gender=F )=0.570583
+P(Weight=greater_than_130 | Gender=M )=0.719025
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.719025	0.570583	
+1:	0.280975	0.429417	
+
+
+P(Height=less_than_55 | Gender=M )=0.367168
+P(Height=less_than_55 | Gender=F )=0.512845
+P(Height=greater_than_55 | Gender=F )=0.487155
+P(Height=greater_than_55 | Gender=M )=0.632832
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.632832	0.487155	
+1:	0.367168	0.512845	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 2.9414131106395303)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.8879754700153626)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2648142118369492)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08658757737447331)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03249171428524278)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.013638422354858903)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006113979617907717)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.002830848347457504)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0013298550415470345)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000629
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-318.237646
+2	-315.296233
+3	-314.408257
+4	-314.143443
+5	-314.056855
+6	-314.024364
+7	-314.010725
+8	-314.004611
+9	-314.001780
+10	-314.000450
+
+
+ 	  0 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.429169
+P(Gender=M )=0.570831
+
+TableView:
+Gender	
+0:	0.570831	
+1:	0.429169	
+
+
+P(Weight=less_than_130 | Gender=M )=0.313146
+P(Weight=less_than_130 | Gender=F )=0.387368
+P(Weight=greater_than_130 | Gender=F )=0.612632
+P(Weight=greater_than_130 | Gender=M )=0.686854
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.686854	0.612632	
+1:	0.313146	0.387368	
+
+
+P(Height=less_than_55 | Gender=M )=0.369754
+P(Height=less_than_55 | Gender=F )=0.510132
+P(Height=greater_than_55 | Gender=F )=0.489868
+P(Height=greater_than_55 | Gender=M )=0.630246
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.630246	0.489868	
+1:	0.369754	0.510132	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 3.994922765902402)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.1745473970760827)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.31589829990116414)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.08620714255971507)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.026459408767550485)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.009486585900106093)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0038601834680207503)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00169672422629219)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000776
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-319.613795
+2	-315.618873
+3	-314.444325
+4	-314.128427
+5	-314.042220
+6	-314.015760
+7	-314.006274
+8	-314.002414
+9	-314.000717
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000450421
+
+ 	  1 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.434058
+P(Gender=M )=0.565942
+
+TableView:
+Gender	
+0:	0.565942	
+1:	0.434058	
+
+
+P(Weight=less_than_130 | Gender=M )=0.289198
+P(Weight=less_than_130 | Gender=F )=0.417757
+P(Weight=greater_than_130 | Gender=F )=0.582243
+P(Weight=greater_than_130 | Gender=M )=0.710802
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.710802	0.582243	
+1:	0.289198	0.417757	
+
+
+P(Height=less_than_55 | Gender=M )=0.375596
+P(Height=less_than_55 | Gender=F )=0.500935
+P(Height=greater_than_55 | Gender=F )=0.499065
+P(Height=greater_than_55 | Gender=M )=0.624404
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.624404	0.499065	
+1:	0.375596	0.500935	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 3.4847540566524913)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.0530835399797525)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.30707451714584977)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.09654958332498609)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.034937040994861945)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.014332132361801087)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006351172215090628)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.002925361276084004)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0013711331634453927)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000647
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-319.001865
+2	-315.517110
+3	-314.464027
+4	-314.156952
+5	-314.060403
+6	-314.025466
+7	-314.011134
+8	-314.004782
+9	-314.001857
+10	-314.000486
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000450421
+
+ 	  2 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.424624
+P(Gender=M )=0.575376
+
+TableView:
+Gender	
+0:	0.575376	
+1:	0.424624	
+
+
+P(Weight=less_than_130 | Gender=M )=0.294954
+P(Weight=less_than_130 | Gender=F )=0.412813
+P(Weight=greater_than_130 | Gender=F )=0.587187
+P(Weight=greater_than_130 | Gender=M )=0.705046
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.705046	0.587187	
+1:	0.294954	0.412813	
+
+
+P(Height=less_than_55 | Gender=M )=0.357959
+P(Height=less_than_55 | Gender=F )=0.527617
+P(Height=greater_than_55 | Gender=F )=0.472383
+P(Height=greater_than_55 | Gender=M )=0.642041
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.642041	0.472383	
+1:	0.357959	0.527617	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 2.941891275854289)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.8545025689440422)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.23659579059426505)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.069553424204571)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.023420317344061914)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.00906485488025055)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0038681385448740002)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0017432974350413133)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000807
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-318.141421
+2	-315.199529
+3	-314.345027
+4	-314.108431
+5	-314.038878
+6	-314.015457
+7	-314.006392
+8	-314.002524
+9	-314.000781
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000450421
+
+ 	  3 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.429873
+P(Gender=M )=0.570127
+
+TableView:
+Gender	
+0:	0.570127	
+1:	0.429873	
+
+
+P(Weight=less_than_130 | Gender=M )=0.287002
+P(Weight=less_than_130 | Gender=F )=0.421921
+P(Weight=greater_than_130 | Gender=F )=0.578079
+P(Weight=greater_than_130 | Gender=M )=0.712998
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.712998	0.578079	
+1:	0.287002	0.421921	
+
+
+P(Height=less_than_55 | Gender=M )=0.351517
+P(Height=less_than_55 | Gender=F )=0.534089
+P(Height=greater_than_55 | Gender=F )=0.465911
+P(Height=greater_than_55 | Gender=M )=0.648483
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.648483	0.465911	
+1:	0.351517	0.534089	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 2.7081455585891945)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.7953804164054077)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.2283560408521339)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.07070676598578984)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.024994871225146653)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.009998040826303622)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004343281361741447)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0019744746635979027)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000918
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-317.844892
+2	-315.136746
+3	-314.341366
+4	-314.113010
+5	-314.042303
+6	-314.017308
+7	-314.007310
+8	-314.002967
+9	-314.000992
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000450421
+
+ 	  4 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.456473
+P(Gender=M )=0.543527
+
+TableView:
+Gender	
+0:	0.543527	
+1:	0.456473	
+
+
+P(Weight=less_than_130 | Gender=M )=0.298458
+P(Weight=less_than_130 | Gender=F )=0.400418
+P(Weight=greater_than_130 | Gender=F )=0.599582
+P(Weight=greater_than_130 | Gender=M )=0.701542
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.701542	0.599582	
+1:	0.298458	0.400418	
+
+
+P(Height=less_than_55 | Gender=M )=0.353685
+P(Height=less_than_55 | Gender=F )=0.520869
+P(Height=greater_than_55 | Gender=F )=0.479131
+P(Height=greater_than_55 | Gender=M )=0.646315
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.646315	0.479131	
+1:	0.353685	0.520869	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 3.9584782328835217)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.1912086372365138)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.34539443468679565)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.10508007267077346)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.035912506144939016)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.013909206319908662)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005909402278518883)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0026520485442915742)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0012248598209225747)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000574
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-319.660112
+2	-315.701634
+3	-314.510425
+4	-314.165031
+5	-314.059951
+6	-314.024038
+7	-314.010129
+8	-314.004220
+9	-314.001568
+10	-314.000343
+
+ Found a better answer
+Best Answer has a likelyhood of
+-314.000342908
+
+ 	  5 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.445741
+P(Gender=M )=0.554259
+
+TableView:
+Gender	
+0:	0.554259	
+1:	0.445741	
+
+
+P(Weight=less_than_130 | Gender=M )=0.268016
+P(Weight=less_than_130 | Gender=F )=0.440727
+P(Weight=greater_than_130 | Gender=F )=0.559273
+P(Weight=greater_than_130 | Gender=M )=0.731984
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.731984	0.559273	
+1:	0.268016	0.440727	
+
+
+P(Height=less_than_55 | Gender=M )=0.390449
+P(Height=less_than_55 | Gender=F )=0.479179
+P(Height=greater_than_55 | Gender=F )=0.520821
+P(Height=greater_than_55 | Gender=M )=0.609551
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.609551	0.520821	
+1:	0.390449	0.479179	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 3.6816845572374177)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.16741008734067)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.37422236470723647)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.13324179898177135)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.05389132661048279)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.023805684843068775)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.010996460321052837)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005176805227563364)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0024543112380115417)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0011660705112603864)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000554
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-319.454360
+2	-315.772676
+3	-314.605265
+4	-314.231043
+5	-314.097801
+6	-314.043910
+7	-314.020104
+8	-314.009108
+9	-314.003931
+10	-314.001477
+11	-314.000311
+
+ Found a better answer
+Best Answer has a likelyhood of
+-314.000310634
+
+ 	  6 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.416356
+P(Gender=M )=0.583644
+
+TableView:
+Gender	
+0:	0.583644	
+1:	0.416356	
+
+
+P(Weight=less_than_130 | Gender=M )=0.281091
+P(Weight=less_than_130 | Gender=F )=0.434587
+P(Weight=greater_than_130 | Gender=F )=0.565413
+P(Weight=greater_than_130 | Gender=M )=0.718909
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.718909	0.565413	
+1:	0.281091	0.434587	
+
+
+P(Height=less_than_55 | Gender=M )=0.362109
+P(Height=less_than_55 | Gender=F )=0.525169
+P(Height=greater_than_55 | Gender=F )=0.474831
+P(Height=greater_than_55 | Gender=M )=0.637891
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.637891	0.474831	
+1:	0.362109	0.525169	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 2.416726635709324)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.7070287398603909)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.20442666092600348)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.06528767882713282)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.024144321892833887)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.01005698659224663)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0044911455349279095)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.002075237246913275)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000974
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-317.435341
+2	-315.018614
+3	-314.311585
+4	-314.107159
+5	-314.041871
+6	-314.017727
+7	-314.007670
+8	-314.003178
+9	-314.001103
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000310634
+
+ 	  7 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.431959
+P(Gender=M )=0.568041
+
+TableView:
+Gender	
+0:	0.568041	
+1:	0.431959	
+
+
+P(Weight=less_than_130 | Gender=M )=0.292892
+P(Weight=less_than_130 | Gender=F )=0.413524
+P(Weight=greater_than_130 | Gender=F )=0.586476
+P(Weight=greater_than_130 | Gender=M )=0.707108
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.707108	0.586476	
+1:	0.292892	0.413524	
+
+
+P(Height=less_than_55 | Gender=M )=0.377674
+P(Height=less_than_55 | Gender=F )=0.498811
+P(Height=greater_than_55 | Gender=F )=0.501189
+P(Height=greater_than_55 | Gender=M )=0.622326
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.622326	0.501189	
+1:	0.377674	0.498811	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 3.600339329204644)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.0830647005132619)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.31112678028279106)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.09565288160553109)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03389338191220759)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.013713981247121865)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.006033556344789304)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0027695661580651176)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0012960389563545505)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000612
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-319.148308
+2	-315.547968
+3	-314.464904
+4	-314.153777
+5	-314.058124
+6	-314.024231
+7	-314.010517
+8	-314.004483
+9	-314.001713
+10	-314.000417
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000310634
+
+ 	  8 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.414100
+P(Gender=M )=0.585900
+
+TableView:
+Gender	
+0:	0.585900	
+1:	0.414100	
+
+
+P(Weight=less_than_130 | Gender=M )=0.290663
+P(Weight=less_than_130 | Gender=F )=0.421880
+P(Weight=greater_than_130 | Gender=F )=0.578120
+P(Weight=greater_than_130 | Gender=M )=0.709337
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.709337	0.578120	
+1:	0.290663	0.421880	
+
+
+P(Height=less_than_55 | Gender=M )=0.371886
+P(Height=less_than_55 | Gender=F )=0.512224
+P(Height=greater_than_55 | Gender=F )=0.487776
+P(Height=greater_than_55 | Gender=M )=0.628114
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.628114	0.487776	
+1:	0.371886	0.512224	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 2.9014307873552525)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.8429531031035253)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.23399015715585847)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.07021340271978715)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.02455827136827793)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.009885154181233702)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.004341517583611676)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0019916155573582728)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000932
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-318.090386
+2	-315.188955
+3	-314.346002
+4	-314.112012
+5	-314.041798
+6	-314.017240
+7	-314.007355
+8	-314.003014
+9	-314.001022
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000310634
+
+ 	  9 = nth time RUNNING EM ALGORITHM 
+
+kicking off
+node copying
+maximization
+reseting network prob
+STARTING CONDTIONAL PROBABILTIES VALUES:
+
+P(Gender=F )=0.430231
+P(Gender=M )=0.569769
+
+TableView:
+Gender	
+0:	0.569769	
+1:	0.430231	
+
+
+P(Weight=less_than_130 | Gender=M )=0.293923
+P(Weight=less_than_130 | Gender=F )=0.412643
+P(Weight=greater_than_130 | Gender=F )=0.587357
+P(Weight=greater_than_130 | Gender=M )=0.706077
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.706077	0.587357	
+1:	0.293923	0.412643	
+
+
+P(Height=less_than_55 | Gender=M )=0.376594
+P(Height=less_than_55 | Gender=F )=0.500727
+P(Height=greater_than_55 | Gender=F )=0.499273
+P(Height=greater_than_55 | Gender=M )=0.623406
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.623406	0.499273	
+1:	0.376594	0.500727	
+
+ getting likelyhood
+ running itteration
+checking likelyhood comparison
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 3.5540255505958953)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 1.0644511226075792)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.30356163952092174)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.09245149560621257)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.03246312437914867)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.013050666086598994)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.005720281684261863)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.0026205935538428093)
+('Running another itteration as currentLikelyhood-previousLikelyhood = ', 0.001225077241542749)
+Not running another itteration as currentLikelyhood-previousLikelyhood = 0.000578
+ITERATION LIKELYHOOD TABLE
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-319.069923
+2	-315.515897
+3	-314.451446
+4	-314.147884
+5	-314.055433
+6	-314.022970
+7	-314.009919
+8	-314.004199
+9	-314.001578
+10	-314.000353
+
+Not a better answer
+Best Answer has a likelyhood of
+-314.000310634
+
+
+ Printing conditionalProbability for best iteration of EM:
+
+P(Gender=F )=0.338707
+P(Gender=M )=0.661293
+
+TableView:
+Gender	
+0:	0.661293	
+1:	0.338707	
+
+
+P(Weight=less_than_130 | Gender=M )=0.254467
+P(Weight=less_than_130 | Gender=F )=0.521756
+P(Weight=greater_than_130 | Gender=F )=0.478244
+P(Weight=greater_than_130 | Gender=M )=0.745533
+
+TableView:
+Weight	Gender=0	Gender=1	
+0:	0.745533	0.478244	
+1:	0.254467	0.521756	
+
+
+P(Height=less_than_55 | Gender=M )=0.312504
+P(Height=less_than_55 | Gender=F )=0.659400
+P(Height=greater_than_55 | Gender=F )=0.340600
+P(Height=greater_than_55 | Gender=M )=0.687496
+
+TableView:
+Height	Gender=0	Gender=1	
+0:	0.687496	0.340600	
+1:	0.312504	0.659400	
+
+	 ITERATION LIKELYHOOD TABLE:
+
+Table Mapping iterations to likelyhood
+iteration 	 likelyhood
+1	-319.454360
+2	-315.772676
+3	-314.605265
+4	-314.231043
+5	-314.097801
+6	-314.043910
+7	-314.020104
+8	-314.009108
+9	-314.003931
+10	-314.001477
+11	-314.000311
+
+-314.000310634

@@ -1,0 +1,4 @@
+Gender	 Height	 Weight
+1	0	1
+-	0	1
+0	1	1
