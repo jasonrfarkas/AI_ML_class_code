@@ -1,0 +1,7 @@
+Made with python 2. 
+
+Dependancies include Pandas, Numpy and ipdb. 
+Run in terminal and it will stop at the end where you can then inspect values from the run. 
+Primarily you will be interested in accessing:
+cluster_info["final_centroids"]
+and k_means_alg.iterations_holder
